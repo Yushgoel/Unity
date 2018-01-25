@@ -41,7 +41,7 @@ public class playermove : MonoBehaviour {
 	{
 		if (other.gameObject.tag == "Goall")
 		{
-			
+			Game_manager.CompleteLevel ();
 		}	
 	}
 	void Die()

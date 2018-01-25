@@ -51,7 +51,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 9
@@ -161,29 +161,25 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5d12a5464e9b14b43b1fae517ba772cd, type: 2}
-    m_RemovedComponents: []
+    - target: {fileID: 114372916482499304, guid: 0751bdfc94c994961bf7411e3ba3f0cb,
+        type: 2}
+      propertyPath: patrol_points.Array.data[0]
+      value: 
+      objectReference: {fileID: 1571548935}
+    - target: {fileID: 114550162354211174, guid: 0751bdfc94c994961bf7411e3ba3f0cb,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114372916482499304, guid: 0751bdfc94c994961bf7411e3ba3f0cb,
+        type: 2}
+      propertyPath: patrol_points.Array.data[1]
+      value: 
+      objectReference: {fileID: 1387644758}
+    m_RemovedComponents:
+    - {fileID: 114550162354211174, guid: 0751bdfc94c994961bf7411e3ba3f0cb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0751bdfc94c994961bf7411e3ba3f0cb, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &207350356 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1334791470816290, guid: 0751bdfc94c994961bf7411e3ba3f0cb,
-    type: 2}
-  m_PrefabInternal: {fileID: 207350355}
---- !u!114 &207350357
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 207350356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1b875d27584394197a9ba6043270a82c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  patrol_points:
-  - {fileID: 1571548935}
-  - {fileID: 1387644758}
-  espeed: 2.5
 --- !u!1 &263984283
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,7 +193,7 @@ GameObject:
   - component: {fileID: 263984284}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Goall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1000,6 +996,7 @@ GameObject:
   - component: {fileID: 1791739243}
   - component: {fileID: 1791739242}
   - component: {fileID: 1791739241}
+  - component: {fileID: 1791739245}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1070,6 +1067,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 26.126001, y: 0, z: 0}
+--- !u!114 &1791739245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1791739240}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acc191914700d4249a6f0a65f6d6eea1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1985849554
 GameObject:
   m_ObjectHideFlags: 0
