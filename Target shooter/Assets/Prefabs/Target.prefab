@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 65810584736121806}
   - component: {fileID: 23601886071882160}
   - component: {fileID: 114906325898145358}
-  - component: {fileID: 114808338123333268}
+  - component: {fileID: 114393993454281632}
   m_Layer: 0
   m_Name: Target
   m_TagString: Finish
@@ -97,7 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1.0198526}
   m_Center: {x: 0, y: 0, z: 0.009926319}
---- !u!114 &114808338123333268
+--- !u!114 &114393993454281632
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -109,6 +109,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current_level: 0
+  particles: {fileID: 1720941950698658, guid: 62fa09b2b8fc042ecbe7def94b182ea6, type: 2}
+  Win_text: {fileID: 0}
 --- !u!114 &114906325898145358
 MonoBehaviour:
   m_ObjectHideFlags: 1
