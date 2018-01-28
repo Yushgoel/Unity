@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Hit : MonoBehaviour {
 	public int current_level;
-	public GameObject particles;
-	public Text Win_text;
-
+	public GameObject Explosion;
 	// Use this for initialization
 	void Start () {
-		Win_text.text = "";
+
 	}
 
 	// Update is called once per frame
@@ -19,11 +16,9 @@ public class Hit : MonoBehaviour {
 	}
 	void OnCollisionEnter(Collision other)
 	{
-		if(other.gameObject.tag == "Hit")
+		if(other.gameObject.tag == "Finish")
 		{
 			print ("You win!!!");
-
-			Instantiate (particles, other.transform.position, Quaternion.identity);
 			if (current_level < 0)
 			{
 				current_level += 1;
@@ -31,12 +26,11 @@ public class Hit : MonoBehaviour {
 			}
 			else
 			{
-				Win_text.text = "You win";
-				gameObject.SetActive(false);
+				//print ("Lol");
 			}
 		}
 
-
+		/**/
 
 		}
 	}
