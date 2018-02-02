@@ -9,39 +9,47 @@ public class Player_movement : MonoBehaviour {
 	private Vector3 spawn;
 	public GameObject Bullet;
 	private int times_pressed = 0;
+	public int total_bull;
 	// Use this for initialization
 	private int num_bullets = 5;
 	public Text bull;
+	public GameObject particles;
+	public Text reload;
 	void Start () {
 		spawn = transform.position;
 		bull.text = "";
+		reload.text = "";
 	}
 
 	// Update is called once per frame
 	void FixedUpdate () {
 		input = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
-		if (num_bullets > 0) {
-			bull.text = "Ammo: " + num_bullets;
-		} else {
+		if (num_bullets == 0 & total_bull == 0) {
 			bull.text = "OUT OF AMMO";
+		} else {
+			bull.text = "Ammo: " + num_bullets + " | " + total_bull;
+			if (num_bullets != 5 & total_bull != 0) 
+			{
+				
+				if (Input.GetKeyDown (KeyCode.R)) {
+					num_bullets = 5;
+					total_bull -= 5;
+				}
+			}
 		}
-		bull.text = "Ammo: " + num_bullets;
+		if (num_bullets == 0) {
+			reload.text = "Press 'R' to reload";
+		
+		} else {
+			reload.text = "";
+		}
+			
 		GetComponent<Rigidbody> ().AddRelativeForce (input * speed);
 		if (transform.position.y < -1) {
 			transform.position = spawn;
 		}
 
-		/*if(Input.GetKeyUp(KeyCode.Space))
-		{
-			//Instantiate (Bullet, transform.position, Quaternion.identity);
-			i ++;
-			//
-			print ("Up" + i);
 
-			Instantiate (Bullet, transform.position, Bullet.transform.rotation);
-
-
-		}*/
 		if(Input.GetKeyDown(KeyCode.Space))
 		{
 			//Instantiate (Bullet, transform.position, Quaternion.identity);
@@ -69,8 +77,12 @@ public class Player_movement : MonoBehaviour {
 			times_pressed = 0;
 		}
 	}
-	//IEnumerator(float duration)
-	//{
-	//	yield return new WaitForSeconds();
-	//}
+		void OnCollisionEnter(Collision other)
+		{
+			if(other.gameObject.tag == "Hit")
+			{
+			Instantiate (particles, transform.position, Quaternion.identity);
+				transform.position = spawn;
+			}
+		}
 }

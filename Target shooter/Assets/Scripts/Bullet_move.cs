@@ -6,6 +6,7 @@ public class Bullet_move : MonoBehaviour {
 	private float y_value;
 	private float x_value;
 	private float z_value;
+	public float pos_neg;
 
 	private Vector3 New_position;
 	// Use this for initialization
@@ -23,7 +24,7 @@ public class Bullet_move : MonoBehaviour {
 
 	void Move()
 	{
-		z_value -= 0.1f;
+		z_value += pos_neg;
 		New_position = new Vector3 (x_value, y_value, z_value);
 		transform.position = New_position;
 	}

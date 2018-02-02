@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 54133312957858384}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: Hit
+  m_TagString: Finish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 040112207bd4c49b3b6b20e1de9c366e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pos_neg: -0.1
 --- !u!136 &136879253595536100
 CapsuleCollider:
   m_ObjectHideFlags: 1
